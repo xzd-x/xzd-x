@@ -61,8 +61,10 @@ if __name__ == "__main__":
 ![watermarked_image](watermarked_image.jpg)  ![extracted_watermark](extracted_watermark.jpg)
 
 
-###代码运行截图
+### 代码运行截图
 
+
+![运行结果](运行结果.png)
 
 
 
