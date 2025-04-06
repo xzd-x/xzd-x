@@ -6,7 +6,14 @@ pip install blind-watermark
 ```
 
 
-## 如何使用
+## 运行步骤
+1：将examp_str.py文件和watermark_image.jpg文件以及original_image.jpg文件放在同一个文件夹中
+
+
+2：运行examp_str.py文件
+
+
+3：在运行成功后将出现运行成功的提示以及extracted_watermark.jpg文件和watermarked_image.jpg文件
 
 
 ## Python 中使用
