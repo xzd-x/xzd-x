@@ -75,6 +75,18 @@ if __name__ == "__main__":
 
 
 
+## 源代码
 
+```python
+if __name__ == "__main__":  
+    original_image = cv2.imread('original_image.jpg')
+    watermark = cv2.imread('watermark_image.jpg')  
 
+    watermarked_image = embed_watermark(original_image, watermark)  
+    cv2.imwrite('watermarked_image.jpg', watermarked_image)  
+
+    extracted_watermark = extract_watermark(watermarked_image, original_image)  
+    cv2.imwrite('extracted_watermark.jpg', extracted_watermark)  
+    print("水印已嵌入并提取！")
+```
 
