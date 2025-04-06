@@ -43,9 +43,9 @@ cv2.imwrite('extracted_wm.png', extracted)
 
 
 
-### 各种攻击后的效果
+### 运行实例
 
-|攻击方式|攻击后的图片|提取的水印|
+
 
 
 
