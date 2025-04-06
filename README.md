@@ -17,22 +17,15 @@ pip install blind-watermark
 
 嵌入水印
 ```python
-import cv2
-from dwt_watermark import embed_watermark
-
-host = cv2.imread('host.jpg')       # 宿主图像
-watermark = cv2.imread('wm.png')    # 水印图像（黑白）
-
-watermarked = embed_watermark(host, watermark, alpha=0.1)
-cv2.imwrite('watermarked.jpg', watermarked)
+    cH_watermarked = cH + alpha * watermark
+    watermarked_coeffs = (cA, (cH_watermarked, cV, cD))
 ```
 
 提取水印
 ```python
-from dwt_watermark import extract_watermark
-
-extracted = extract_watermark('watermarked.jpg', (768, 1024))  # 替换为实际尺寸
-cv2.imwrite('extracted_wm.png', extracted)
+extracted_watermark = (cH_watermarked - cH_original) / alpha
+extracted_watermark = np.clip(extracted_watermark, 0, 255).astype(np.uint8)
+return extracted_watermark 
 ```
 
 
@@ -40,8 +33,20 @@ cv2.imwrite('extracted_wm.png', extracted)
 ### 运行实例
 
 ```python
-python example_str.py
+if __name__ == "__main__":  
+    original_image = cv2.imread('original_image.jpg')
+    watermark = cv2.imread('watermark_image.jpg')  
+
+    watermarked_image = embed_watermark(original_image, watermark)  
+    cv2.imwrite('watermarked_image.jpg', watermarked_image)  
+
+    extracted_watermark = extract_watermark(watermarked_image, original_image)  
+    cv2.imwrite('extracted_watermark.jpg', extracted_watermark)  
+    print("水印已嵌入并提取！")
 ```
+
+
+
 
 
 
