@@ -58,7 +58,7 @@ if __name__ == "__main__":
 ### 运行代码后
 (extracted_watermark.jpg)  (watermarked_image.jpg)
 
-![运行后](watermarked_image.jpg)  ![水印后](extracted_watermark.jpg)
+![watermarked_image](watermarked_image.jpg)  ![extracted_watermark](extracted_watermark.jpg)
 
 
 
