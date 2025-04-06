@@ -44,7 +44,6 @@ blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 ```
 
 
-
 ## Python 中使用
 
 原图 + 水印 = 打上水印的图
