@@ -5,12 +5,6 @@
 pip install blind-watermark
 ```
 
-或者安装最新开发版本
-```bach
-git clone git@github.com:guofei9987/blind_watermark.git
-cd blind_watermark
-pip install .
-```
 
 # 如何使用
 
