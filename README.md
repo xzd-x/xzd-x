@@ -50,6 +50,7 @@ if __name__ == "__main__":
 
 
 ### 运行代码前
+原图和水印
 ![origin_image](original_image.jpg)  ![打上水印的图](watermark_image.jpg)
 ### 运行代码后
 (extracted_watermark.jpg)  (watermarked_image.jpg)
