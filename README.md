@@ -158,15 +158,4 @@ print(wm_extract)
 
 解出的水印是一个0～1之间的实数，方便用户自行卡阈值。如果水印信息量远小于图片可容纳量，偏差极小。
 
-# 并行计算
 
-```python
-WaterMark(..., processes=None)
-```
-- `processes`: 整数，指定线程数。默认为 `None`, 表示使用全部线程。
-
-
-## 相关项目
-
-- text_blind_watermark (文本盲水印，把信息隐秘地打入文本): [https://github.com/guofei9987/text_blind_watermark](https://github.com/guofei9987/text_blind_watermark)  
-- HideInfo（藏物于图、藏物于音、藏图于文）：[https://github.com/guofei9987/HideInfo](https://github.com/guofei9987/HideInfo)
