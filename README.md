@@ -42,7 +42,7 @@ blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 ## Python 中使用
 
 
-参考 [代码](/examples/example_str.py)
+参考 [代码](/example_str.py)
 
 
 嵌入水印
@@ -86,7 +86,7 @@ Output:
 
 ### 嵌入图片
 
-参考 [代码](/examples/example_str.py)
+参考 [代码](/example_str.py)
 
 
 嵌入：
@@ -119,7 +119,7 @@ bwm1.extract(filename='output/embedded.png', wm_shape=(128, 128), out_wm_name='o
 
 ### 隐水印还可以是二进制数据
 
-参考 [代码](/examples/example_bit.py)
+参考 [代码](/example_bit.py)
 
 
 作为 demo， 如果要嵌入是如下长度为6的二进制数据
