@@ -53,7 +53,7 @@ if __name__ == "__main__":
 原图和水印
 
 
-![origin_image](original_image.jpg) + '@guofei9987 开源万岁！' = ![打上水印的图](watermark_image.jpg)
+
 ![origin_image](original_image.jpg)  ![水印](watermark_image.jpg)
 ### 运行代码后
 运行后的图片
