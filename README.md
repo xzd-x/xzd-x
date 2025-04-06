@@ -1,12 +1,12 @@
 # 基于小波变换的盲水印算法设计
 
-# 安装
+## 安装
 ```bash
 pip install blind-watermark
 ```
 
 
-# 如何使用
+## 如何使用
 
 
 ## Python 中使用
@@ -30,7 +30,7 @@ return extracted_watermark
 
 
 
-### 运行实例
+## 运行实例
 
 ```python
 if __name__ == "__main__":  
@@ -45,6 +45,15 @@ if __name__ == "__main__":
     print("水印已嵌入并提取！")
 ```
 
+
+## 运行结果
+
+
+### 运行代码前
+(watermark_image.jpg)   (original_image.jpg)
+
+### 运行代码后
+(extracted_watermark.jpg)  (watermarked_image.jpg)
 
 
 
