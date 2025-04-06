@@ -45,7 +45,9 @@ cv2.imwrite('extracted_wm.png', extracted)
 
 ### 运行实例
 
-
+```python
+python example_str.py
+```
 
 
 
