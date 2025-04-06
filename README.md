@@ -56,9 +56,14 @@ if __name__ == "__main__":
 
 ![origin_image](original_image.jpg)  ![水印](watermark_image.jpg)
 ### 运行代码后
-(extracted_watermark.jpg)  (watermarked_image.jpg)
+运行后的图片
 
 ![watermarked_image](watermarked_image.jpg)  ![extracted_watermark](extracted_watermark.jpg)
+
+
+###代码运行截图
+
+
 
 
 
