@@ -54,11 +54,11 @@ if __name__ == "__main__":
 
 
 
-![origin_image](original_image.jpg)  ![打上水印的图](watermark_image.jpg)
+![origin_image](original_image.jpg)  ![水印](watermark_image.jpg)
 ### 运行代码后
 (extracted_watermark.jpg)  (watermarked_image.jpg)
 
-![origin_image](watermarked_image.jpg)  ![打上水印的图](extracted_watermark.jpg)
+![运行后](watermarked_image.jpg)  ![水印后](extracted_watermark.jpg)
 
 
 
