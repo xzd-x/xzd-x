@@ -2,7 +2,7 @@
 
 ## 安装
 ```bash
-pip install blind-watermark
+pip install blind-watermark 
 ```
 
 
