@@ -1,19 +1,4 @@
-# blind-watermark
-
-基于频域的数字盲水印  
-
-
-[![PyPI](https://img.shields.io/pypi/v/blind_watermark)](https://pypi.org/project/blind_watermark/)
-[![Build Status](https://travis-ci.com/guofei9987/blind_watermark.svg?branch=master)](https://travis-ci.com/guofei9987/blind_watermark)
-[![codecov](https://codecov.io/gh/guofei9987/blind_watermark/branch/master/graph/badge.svg)](https://codecov.io/gh/guofei9987/blind_watermark)
-[![License](https://img.shields.io/pypi/l/blind_watermark.svg)](https://github.com/guofei9987/blind_watermark/blob/master/LICENSE)
-![Python](https://img.shields.io/badge/python->=3.5-green.svg)
-![Platform](https://img.shields.io/badge/platform-windows%20|%20linux%20|%20macos-green.svg)
-[![stars](https://img.shields.io/github/stars/guofei9987/blind_watermark.svg?style=social)](https://github.com/guofei9987/blind_watermark/)
-[![fork](https://img.shields.io/github/forks/guofei9987/blind_watermark?style=social)](https://github.com/guofei9987/blind_watermark/fork)
-[![Downloads](https://pepy.tech/badge/blind-watermark)](https://pepy.tech/project/blind-watermark)
-[![Discussions](https://img.shields.io/badge/discussions-green.svg)](https://github.com/guofei9987/blind_watermark/discussions)
-
+# 基于小波变换的盲水印算法设计
 
 # 安装
 ```bash
@@ -29,15 +14,6 @@ pip install .
 
 # 如何使用
 
-## 命令行中使用
-
-```bash
-# 嵌入水印：
-blind_watermark --embed --pwd 1234 examples/pic/ori_img.jpeg "watermark text" examples/output/embedded.png
-# 提取水印：
-blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
-```
-
 
 ## Python 中使用
 
@@ -47,40 +23,30 @@ blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 
 嵌入水印
 ```python
-from blind_watermark import WaterMark
+import cv2
+from dwt_watermark import embed_watermark
 
-bwm1 = WaterMark(password_img=1, password_wm=1)
-bwm1.read_img('pic/ori_img.jpg')
-wm = '@guofei9987 开源万岁！'
-bwm1.read_wm(wm, mode='str')
-bwm1.embed('output/embedded.png')
-len_wm = len(bwm1.wm_bit)
-print('Put down the length of wm_bit {len_wm}'.format(len_wm=len_wm))
+host = cv2.imread('host.jpg')       # 宿主图像
+watermark = cv2.imread('wm.png')    # 水印图像（黑白）
+
+watermarked = embed_watermark(host, watermark, alpha=0.1)
+cv2.imwrite('watermarked.jpg', watermarked)
 ```
-
 
 提取水印
 ```python
-bwm1 = WaterMark(password_img=1, password_wm=1)
-wm_extract = bwm1.extract('output/embedded.png', wm_shape=len_wm, mode='str')
-print(wm_extract)
+from dwt_watermark import extract_watermark
+
+extracted = extract_watermark('watermarked.jpg', (768, 1024))  # 替换为实际尺寸
+cv2.imwrite('extracted_wm.png', extracted)
 ```
-Output:
->@guofei9987 开源万岁！
+
 
 
 ### 各种攻击后的效果
 
 |攻击方式|攻击后的图片|提取的水印|
-|--|--|--|
-|旋转攻击45度|![旋转攻击](docs/旋转攻击.jpg)|'@guofei9987 开源万岁！'|
-|随机截图|![截屏攻击](docs/截屏攻击2_还原.jpg)|'@guofei9987 开源万岁！'|
-|多遮挡| ![多遮挡攻击](docs/多遮挡攻击.jpg) |'@guofei9987 开源万岁！'|
-|纵向裁剪|![横向裁剪攻击](docs/横向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
-|横向裁剪|![纵向裁剪攻击](docs/纵向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
-|缩放攻击|![缩放攻击](docs/缩放攻击.jpg)|'@guofei9987 开源万岁！'|
-|椒盐攻击|![椒盐攻击](docs/椒盐攻击.jpg)|'@guofei9987 开源万岁！'|
-|亮度攻击|![亮度攻击](docs/亮度攻击.jpg)|'@guofei9987 开源万岁！'|
+
 
 
 
