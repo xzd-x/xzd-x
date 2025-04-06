@@ -15,11 +15,6 @@
 [![Discussions](https://img.shields.io/badge/discussions-green.svg)](https://github.com/guofei9987/blind_watermark/discussions)
 
 
-- **Documentation:** [https://BlindWatermark.github.io/blind_watermark/#/en/](https://BlindWatermark.github.io/blind_watermark/#/en/)
-- **文档：** [https://BlindWatermark.github.io/blind_watermark/#/zh/](https://BlindWatermark.github.io/blind_watermark/#/zh/)  
-- **English readme** [README.md](README.md)
-- **Source code:** [https://github.com/guofei9987/blind_watermark](https://github.com/guofei9987/blind_watermark)
-
 # 安装
 ```bash
 pip install blind-watermark
@@ -45,11 +40,6 @@ blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 
 
 ## Python 中使用
-
-原图 + 水印 = 打上水印的图
-
-![origin_image](docs/原图.jpeg) + '@guofei9987 开源万岁！' = ![打上水印的图](docs/打上水印的图.jpg)
-
 
 
 参考 [代码](/examples/example_str.py)
